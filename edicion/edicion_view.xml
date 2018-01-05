@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_edicion_tree">
+            <field name="name">res.edicion.tree</field>
+            <field name="model">res.edicion</field>
+            <field name="arch" type="xml">
+                <tree string="Ediciones">
+                    <field name="centro"/>
+                    <field name="numero"/>
+                    <field name="fechainicio"/>
+                    <field name="fechafin"/>
+                    <field name="estado"/>
+                    <field name="profesor"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_edicion_form">
+            <field name="name">res.edicion.form</field>
+            <field name="model">res.edicion</field>
+            <field name="arch" type="xml">
+                <form string="Ediciones">
+				<div>
+					<label for="centro" string="Centro: "/>
+					<field name="centro"/>
+				</div>
+				<div>
+						<label for="numero" string="Nº Edición: "/>
+						<field name="numero"/>
+				</div>
+				<div>
+					<label for="fechainicio" string="Fecha inicio: "/>
+					<field name="fechainicio"/>
+				</div>
+				<div>
+						<label for="fechafin" string="Fecha fin: "/>
+						<field name="fechafin"/>
+				</div>
+				<div>
+						<label for="estado" string="Estado: "/>
+						<field name="estado"/>
+				</div>
+				<div>
+						<label for="profesor" string="Profesor: "/>
+						<field name="profesor"/>
+				</div>
+               
+				</form>
+            </field>
+        </record>
+       
+        <record model="ir.actions.act_window" id="action_edicion">
+            <field name="name">Ediciones</field>
+            <field name="res_model">res.edicion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+<menuitem name="Ediciones" id="menu_edicion" parent="base.menu_product" action="action_edicion"/>
+	</data>
+</openerp>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_inscripcion_tree">
+            <field name="name">res.inscripcion.tree</field>
+            <field name="model">res.inscripcion</field>
+            <field name="arch" type="xml">
+                <tree string="Inscripcion">
+                    <field name="centro"/>
+                    <field name="curso"/>
+                    <field name="edicion"/>
+					<field name="estado"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_inscription_form">
+            <field name="name">res.inscripcion.form</field>
+            <field name="model">res.inscripcion</field>
+            <field name="arch" type="xml">
+                <form string="Inscripcion">
+				<div>
+					<label for="centro" string="Centro: "/>
+					<field name="centro"/>
+				</div>
+				<div>
+					<label for="curso" string="Curso: "/>
+					<field name="curso"/>
+				</div>
+				<div>
+					<label for="edicion" string="Edicion: "/>
+					<field name="edicion"/>
+				</div>
+				<div>
+					<label for="estado" string="Estado: "/>
+					<field name="estado"/>
+				</div>
+               
+				</form>
+            </field>
+        </record>
+       
+        <record model="ir.actions.act_window" id="action_inscripcion">
+            <field name="name">Inscripcion</field>
+            <field name="res_model">res.inscripcion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+		
+        <menuitem name="Inscripciones" id="menu_inscripcion" parent="base.menu_product" action="action_inscripcion"/>
+
+	</data>
+</openerp>
